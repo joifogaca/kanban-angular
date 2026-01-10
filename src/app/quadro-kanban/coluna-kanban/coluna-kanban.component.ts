@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-coluna-kanban',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './coluna-kanban.component.scss'
 })
 export class ColunaKanbanComponent {
+
+  @Input({ required: true }) nomeColuna!: string;
 
 }
