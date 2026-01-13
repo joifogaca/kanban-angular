@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Card } from '../shared/card.model';
 
 @Component({
   selector: 'app-coluna-kanban',
@@ -10,5 +11,6 @@ import { Component, Input } from '@angular/core';
 export class ColunaKanbanComponent {
 
   @Input({ required: true }) nomeColuna!: string;
+  @Input({ required: true }) cards!: Card[];
 
 }

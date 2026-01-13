@@ -5,10 +5,10 @@
     <p>Um quadro kanban para gerenciar suas tarefas.</p>
 </div>
 <div class="colunas-kanban">
-  <app-coluna-kanban nomeColuna="Backlog"></app-coluna-kanban>
-  <app-coluna-kanban nomeColuna="Doing"></app-coluna-kanban>
-  <app-coluna-kanban nomeColuna="Review"></app-coluna-kanban>
-  <app-coluna-kanban nomeColuna="Done"></app-coluna-kanban>
+  <app-coluna-kanban nomeColuna="Backlog" [cards]="cards"></app-coluna-kanban>
+  <app-coluna-kanban nomeColuna="Doing" [cards]="cards"></app-coluna-kanban>
+  <app-coluna-kanban nomeColuna="Review" [cards]="cards"></app-coluna-kanban>
+  <app-coluna-kanban nomeColuna="Done" [cards]="cards"></app-coluna-kanban>
 </div>
   </div>
 </main>
