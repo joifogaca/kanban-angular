@@ -1,8 +1,13 @@
 <div class="coluna-kanban">
-  <div class="kanban-title">
+  <div class="coluna-header">
     <h2>{{ nomeColuna }}</h2>
-  </div>
-  <button class="add-card">
+    <button class="add-cartao">
       <i class="fa-solid fa-plus"></i>
   </button>
+  </div>
+<div class="cartoes">
+  @for (card of cards; track card.id) {
+  <app-cartao-kanban  [card]="card"></app-cartao-kanban>
+  }
+</div>
 </div>

@@ -5,7 +5,15 @@ export const CARD_STATUS = {
   done: 'done'
 } as const;
 
+export const CARD_PRIORIDADE = {
+  HIGH: 'high',
+  MEDIUM: 'medium',
+  LOW: 'low'
+} as const;
+
 export type CardStatus = typeof CARD_STATUS[keyof typeof CARD_STATUS];
+
+export type Prioridade = typeof CARD_PRIORIDADE[keyof typeof CARD_PRIORIDADE];
 
 export interface Responsavel {
   id: number;
@@ -21,4 +29,5 @@ export interface Card {
   responsavel: Responsavel;
   status: CardStatus;
   dataCriacao: Date;
+  prioridade: Prioridade;
 }

@@ -12,9 +12,9 @@ import { Card } from './shared/card.model';
 })
 export class QuadroKanbanComponent {
 
-  cards: Card[] = [];
+  cards: Card[];
   constructor(private readonly cardService: CardService) {
-    this.cards = this.cardService.getCards(); 
+    this.cards = this.cardService.getCards();
   }
 
 }

@@ -1,1 +1,8 @@
-<p>cartao-kanban works!</p>
+<div class="cartao" draggable="true">
+  <h4>{{ card.titulo }}</h4>
+  <div class="badge" [ngClass]="card.prioridade">
+    <span >
+       Alta prioridade
+    </span>
+</div>
+</div>

@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Card } from '../shared/card.model';
+import { CartaoKanbanComponent } from "./cartao-kanban/cartao-kanban.component";
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-coluna-kanban',
   standalone: true,
-  imports: [],
+  imports: [CartaoKanbanComponent, NgFor],
   templateUrl: './coluna-kanban.component.html',
   styleUrl: './coluna-kanban.component.scss',
    host: {
