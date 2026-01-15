@@ -7,17 +7,34 @@
   align-items: center;
   background-color: aliceblue;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
+
+
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
+ min-height: 100vh;
 }
 
+//layout usando flex-box
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+
+// .colunas-kanban {
+//   display: flex;
+//   gap: 10px;
+// }
+//layout usando flex-box fim
+
 .colunas-kanban {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+
 }
