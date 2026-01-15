@@ -3,7 +3,7 @@ import { MOCK_RESPONSAVEIS } from "./MOCK_RESPONSAVEIS";
 
 export const MOCK_CARDS: Card[] = [
   {
-    id: 1,
+    id: '1',
     titulo: 'Implementar sistema de login',
     descricao: 'Criar tela de login com autenticação JWT e validação de credenciais',
     responsavel: MOCK_RESPONSAVEIS[0], // Ana Silva
@@ -12,7 +12,7 @@ export const MOCK_CARDS: Card[] = [
     prioridade: CARD_PRIORIDADE.HIGH
   },
   {
-    id: 2,
+    id: '2',
     titulo: 'Refatorar componente de tabela',
     descricao: 'Melhorar performance e adicionar funcionalidade de ordenação',
     responsavel: MOCK_RESPONSAVEIS[1], // Carlos Santos
@@ -21,25 +21,25 @@ export const MOCK_CARDS: Card[] = [
     prioridade: CARD_PRIORIDADE.MEDIUM
   },
   {
-    id: 3,
+    id: '3',
     titulo: 'Criar documentação da API',
     descricao: 'Documentar endpoints e exemplos de uso para desenvolvedores',
     responsavel: MOCK_RESPONSAVEIS[2], // Beatriz Oliveira
-    status: CARD_STATUS.review,
+    status: CARD_STATUS.REVIEW,
     dataCriacao: new Date('2024-01-08T11:15:00'),
     prioridade: CARD_PRIORIDADE.LOW
   },
   {
-    id: 4,
+    id: '4',
     titulo: 'Dashboard de métricas',
     descricao: 'Desenvolver dashboard com gráficos de performance e KPIs',
     responsavel: MOCK_RESPONSAVEIS[3], // Pedro Almeida
-    status: CARD_STATUS.done,
+    status: CARD_STATUS.DONE,
     dataCriacao: new Date('2024-01-05T10:00:00'),
     prioridade: CARD_PRIORIDADE.HIGH
   },
   {
-    id: 5,
+    id: '5',
     titulo: 'Testes de integração',
     descricao: 'Implementar testes end-to-end para fluxo de compra',
     responsavel: MOCK_RESPONSAVEIS[4], // Fernanda Costa
@@ -48,7 +48,7 @@ export const MOCK_CARDS: Card[] = [
     prioridade: CARD_PRIORIDADE.MEDIUM
   },
   {
-    id: 6,
+    id: '6',
     titulo: 'Otimização de performance',
     descricao: 'Reduzir tempo de carregamento da página inicial',
     responsavel: MOCK_RESPONSAVEIS[5], // Ricardo Lima

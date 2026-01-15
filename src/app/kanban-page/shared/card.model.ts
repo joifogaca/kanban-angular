@@ -1,8 +1,8 @@
 export const CARD_STATUS = {
   BACKLOG: 'backlog',
   DOING: 'doing',
-  review: 'review',
-  done: 'done'
+  REVIEW: 'review',
+  DONE: 'done'
 } as const;
 
 export const CARD_PRIORIDADE = {
@@ -23,7 +23,7 @@ export interface Responsavel {
   }
 
 export interface Card {
-  id: number;
+  id: string;
   titulo: string;
   descricao: string;
   responsavel: Responsavel;

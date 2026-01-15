@@ -7,16 +7,16 @@
 <div class="colunas-kanban">
   <app-coluna-kanban nomeColuna="Backlog"
   afterColor="#d573b6"
-  [cards]="cards"></app-coluna-kanban>
+  [cards]="backlogCards()"></app-coluna-kanban>
   <app-coluna-kanban nomeColuna="Doing"
    afterColor="#fea065"
-  [cards]="cards"></app-coluna-kanban>
+  [cards]="doingCards()"></app-coluna-kanban>
   <app-coluna-kanban nomeColuna="Review"
   afterColor="#8ff600"
-  [cards]="cards"></app-coluna-kanban>
+  [cards]="reviewCards()"></app-coluna-kanban>
   <app-coluna-kanban nomeColuna="Done"
   afterColor="#004173"
-  [cards]="cards"></app-coluna-kanban>
+  [cards]="doneCards()"></app-coluna-kanban>
 </div>
   </div>
 </main>

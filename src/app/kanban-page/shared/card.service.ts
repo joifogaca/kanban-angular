@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Card } from './card.model';
+import { computed, Injectable, signal } from '@angular/core';
+import { Card, CardStatus } from './card.model';
 import { MOCK_CARDS } from '../mock/MOCK_CARDS';
 
 @Injectable({
@@ -7,9 +7,25 @@ import { MOCK_CARDS } from '../mock/MOCK_CARDS';
 })
 export class CardService {
 
+  private readonly _cards = signal<Card[]>(MOCK_CARDS);
+
+  cards = this._cards.asReadonly();
+
   constructor() { }
 
-  getCards(): Card[]{
-    return MOCK_CARDS;
+  cardsByStatus(status: CardStatus) {
+    return computed(() =>
+      this._cards().filter(card => card.status === status)
+    );
+  }
+
+  moveCard(cardId: string, newStatus: CardStatus) {
+    this._cards.update(cards =>
+      cards.map(card =>
+        card.id === cardId
+          ? { ...card, status: newStatus }
+          : card
+      )
+    );
   }
 }

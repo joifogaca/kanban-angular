@@ -13,8 +13,17 @@
 
 
 .container {
- min-height: 100vh;
+ height: 100vh;
 }
+
+.colunas-kanban {
+  height: 95%;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
 
 //layout usando flex-box
 // .container {
@@ -32,9 +41,4 @@
 // }
 //layout usando flex-box fim
 
-.colunas-kanban {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
 
-}
