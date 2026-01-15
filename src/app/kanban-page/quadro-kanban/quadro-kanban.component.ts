@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ColunaKanbanComponent } from "./coluna-kanban/coluna-kanban.component";
-import { CardService } from './shared/card.service';
-import { Card } from './shared/card.model';
+import { CardService } from '../shared/card.service';
+import { Card } from '../shared/card.model';
+
 
 @Component({
   selector: 'app-quadro-kanban',
