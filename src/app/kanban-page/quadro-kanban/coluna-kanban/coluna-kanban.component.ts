@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
-import { CartaoKanbanComponent } from "./cartao-kanban/cartao-kanban.component";
 import { NgFor } from '@angular/common';
+import { CartaoKanbanComponent } from "../../cartao-kanban/cartao-kanban.component";
 import { Card } from '../../shared/card.model';
 
 @Component({
@@ -10,7 +10,7 @@ import { Card } from '../../shared/card.model';
   imports: [CartaoKanbanComponent, NgFor],
   templateUrl: './coluna-kanban.component.html',
   styleUrl: './coluna-kanban.component.scss',
-   host: {
+  host: {
     '[style.--after-color]': 'afterColor'
   }
 })
