@@ -1,11 +1,14 @@
-<div class="coluna-kanban">
+<div class="coluna-kanban"
+
+   (dragover)="dragover()"
+   (dragleave)="dragleave()">
   <div class="coluna-header">
     <h2>{{ nomeColuna }}</h2>
     <button class="add-cartao">
       <i class="fa-solid fa-plus"></i>
   </button>
   </div>
-<div class="cartoes">
+<div class="cartoes" [class.card_over]="card_over">
   @for (card of cards; track card.id) {
   <app-cartao-kanban  [card]="card"></app-cartao-kanban>
   }

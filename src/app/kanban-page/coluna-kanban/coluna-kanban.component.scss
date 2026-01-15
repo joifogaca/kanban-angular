@@ -41,9 +41,15 @@
 
 .cartoes {
     display: flex;
+    padding: 10px;
     flex-direction: column;
     gap: 12px;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.card_over {
+ background-color: #eaeffa;
+ border-radius: 8px;
 }
