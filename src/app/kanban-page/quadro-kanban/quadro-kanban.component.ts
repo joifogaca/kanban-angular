@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ColunaKanbanComponent } from "./coluna-kanban/coluna-kanban.component";
-import { CardService } from '../shared/card.service';
+import { ColunaKanbanComponent } from "../coluna-kanban/coluna-kanban.component";
 import { Card } from '../shared/card.model';
+import { CardService } from '../shared/card.service';
 
 
 @Component({
