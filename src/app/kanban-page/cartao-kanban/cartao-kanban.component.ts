@@ -13,5 +13,14 @@ import { Card } from '../shared/card.model';
 export class CartaoKanbanComponent {
 
   @Input({ required: true }) card!: Card;
+  dragging: boolean = false;
+
+  dragStart(): void {
+    this.dragging = true;
+   }
+
+   dragEnd(): void {
+    this.dragging = false;
+   }
 
 }
