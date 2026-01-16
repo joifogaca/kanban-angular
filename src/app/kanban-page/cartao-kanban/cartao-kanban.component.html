@@ -1,7 +1,7 @@
 <div class="cartao"
 [class.dragging]="dragging"
 draggable="true"
-(dragstart)="dragStart()" (dragend)="dragEnd()">
+(dragstart)="dragStart($event)" (dragend)="dragEnd()">
   <h4>{{ card.titulo }}</h4>
   <div class="badge" [ngClass]="card.prioridade">
     <span >

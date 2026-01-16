@@ -1,13 +1,14 @@
 import { Component, Input } from '@angular/core';
 
-import { NgFor, NgClass } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 import { CartaoKanbanComponent } from "../cartao-kanban/cartao-kanban.component";
-import { Card } from '../shared/card.model';
+import { Card, CardStatus } from '../shared/card.model';
+import { CardService } from '../shared/card.service';
 
 @Component({
   selector: 'app-coluna-kanban',
   standalone: true,
-  imports: [CartaoKanbanComponent, NgFor, NgClass],
+  imports: [CartaoKanbanComponent,  TitleCasePipe],
   templateUrl: './coluna-kanban.component.html',
   styleUrl: './coluna-kanban.component.scss',
   host: {
@@ -17,16 +18,31 @@ import { Card } from '../shared/card.model';
 export class ColunaKanbanComponent {
 
   @Input({ required: true }) afterColor: string = '#d573b6';
-  @Input({ required: true }) nomeColuna!: string;
+  @Input({ required: true }) nomeColuna!: CardStatus;
   @Input({ required: true }) cards!: Card[];
 
+  constructor(private readonly cardService: CardService){}
+
   card_over: boolean = false;
-  dragover(){
+  onDragover(event: DragEvent){
+    event.preventDefault();
     this.card_over = true;
   }
 
-  dragleave(){
+  onDragleave(event: DragEvent){
+    event.preventDefault();
     this.card_over = false;
   }
+
+  onDrop(event: DragEvent) {
+  event.preventDefault();
+
+  const data = event.dataTransfer?.getData('application/json');
+  if (!data) return;
+
+  const card: Card = JSON.parse(data);
+
+  this.cardService.moveCard(card.id, this.nomeColuna);
+}
 
 }

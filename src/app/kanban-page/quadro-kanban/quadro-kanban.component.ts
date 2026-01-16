@@ -1,6 +1,6 @@
-import { Component, effect, Signal, signal } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { ColunaKanbanComponent } from "../coluna-kanban/coluna-kanban.component";
-import { Card, CARD_STATUS } from '../shared/card.model';
+import { Card, CARD_STATUS, CardStatus } from '../shared/card.model';
 import { CardService } from '../shared/card.service';
 
 
@@ -13,16 +13,18 @@ import { CardService } from '../shared/card.service';
 })
 export class QuadroKanbanComponent {
 
+
   backlogCards!: Signal<Card[]>;
   doingCards!: Signal<Card[]>;
   reviewCards!: Signal<Card[]>;
   doneCards!: Signal<Card[]>;
 
+
   constructor(private readonly cardService: CardService) {
-    this.backlogCards = this.cardService.cardsByStatus(CARD_STATUS.BACKLOG);
-    this.doingCards = this.cardService.cardsByStatus(CARD_STATUS.DOING);
-    this.reviewCards = this.cardService.cardsByStatus(CARD_STATUS.REVIEW);
-    this.doneCards = this.cardService.cardsByStatus(CARD_STATUS.DONE);
+    this.backlogCards = this.cardService.cardsByStatus('backlog');
+    this.doingCards = this.cardService.cardsByStatus('doing');
+    this.reviewCards = this.cardService.cardsByStatus('review');
+    this.doneCards = this.cardService.cardsByStatus('done');
 
   }
 

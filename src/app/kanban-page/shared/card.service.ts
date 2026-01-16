@@ -1,5 +1,7 @@
+
 import { computed, Injectable, signal } from '@angular/core';
 import { Card, CardStatus } from './card.model';
+
 import { MOCK_CARDS } from '../mock/MOCK_CARDS';
 
 @Injectable({
@@ -14,8 +16,10 @@ export class CardService {
   constructor() { }
 
   cardsByStatus(status: CardStatus) {
-    return computed(() =>
-      this._cards().filter(card => card.status === status)
+    return computed(() => {
+      console.log(this._cards());
+      return this._cards().filter(card => card.status === status.toString());
+    }
     );
   }
 

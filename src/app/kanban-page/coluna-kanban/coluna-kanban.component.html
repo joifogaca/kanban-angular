@@ -1,9 +1,9 @@
 <div class="coluna-kanban"
-
-   (dragover)="dragover()"
-   (dragleave)="dragleave()">
+   (dragover)="onDragover($event)"
+   (dragleave)="onDragleave($event)"
+   (drop)="onDrop($event)">
   <div class="coluna-header">
-    <h2>{{ nomeColuna }}</h2>
+    <h2>{{ nomeColuna | titlecase }}</h2>
     <button class="add-cartao">
       <i class="fa-solid fa-plus"></i>
   </button>

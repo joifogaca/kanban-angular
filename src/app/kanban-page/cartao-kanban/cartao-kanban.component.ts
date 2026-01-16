@@ -15,8 +15,14 @@ export class CartaoKanbanComponent {
   @Input({ required: true }) card!: Card;
   dragging: boolean = false;
 
-  dragStart(): void {
+  dragStart(event: DragEvent): void {
     this.dragging = true;
+    event.dataTransfer?.setData(
+    'application/json',
+    JSON.stringify(this.card)
+  );
+
+  event.dataTransfer!.effectAllowed = 'move';
    }
 
    dragEnd(): void {
