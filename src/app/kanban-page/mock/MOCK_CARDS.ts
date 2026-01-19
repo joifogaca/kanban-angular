@@ -42,7 +42,7 @@ export const MOCK_CARDS: Card[] = [
     id: '5',
     titulo: 'Testes de integração',
     descricao: 'Implementar testes end-to-end para fluxo de compra',
-    responsavel: MOCK_RESPONSAVEIS[4], // Fernanda Costa
+    responsavel: MOCK_RESPONSAVEIS[2], // Fernanda Costa
     status: CARD_STATUS.DOING,
     dataCriacao: new Date('2024-01-15T16:45:00'),
     prioridade: CARD_PRIORIDADE.MEDIUM
@@ -51,7 +51,7 @@ export const MOCK_CARDS: Card[] = [
     id: '6',
     titulo: 'Otimização de performance',
     descricao: 'Reduzir tempo de carregamento da página inicial',
-    responsavel: MOCK_RESPONSAVEIS[5], // Ricardo Lima
+    responsavel: MOCK_RESPONSAVEIS[3], // Ricardo Lima
     status: CARD_STATUS.BACKLOG,
     dataCriacao: new Date('2024-01-14T13:20:00'),
     prioridade: CARD_PRIORIDADE.MEDIUM

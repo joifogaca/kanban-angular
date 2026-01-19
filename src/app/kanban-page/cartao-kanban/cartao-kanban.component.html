@@ -2,10 +2,21 @@
 [class.dragging]="dragging"
 draggable="true"
 (dragstart)="dragStart($event)" (dragend)="dragEnd()">
-  <h4>{{ card.titulo }}</h4>
-  <div class="badge" [ngClass]="card.prioridade">
+<div class="badge" [ngClass]="card.prioridade">
     <span >
        Alta prioridade
     </span>
 </div>
+  <p class="titulo">{{ card.titulo }}</p>
+  <div class="detalhes">
+    <div class="dados-data">
+      <p class="label-data">Criado em: </p>
+    <p class="data-criacao">{{ card.dataCriacao | date: 'dd/MM/yyyy' }}</p>
+    </div>
+    <div class="user">
+    <img [src]="card.responsavel.foto" [title]="card.responsavel.nome"  [alt]="card.responsavel.nome">
+</div>
+
+  </div>
+
 </div>
