@@ -18,7 +18,7 @@ export class CardService {
   cardsByStatus(status: CardStatus) {
     return computed(() => {
       console.log(this._cards());
-      return this._cards().filter(card => card.status === status.toString());
+      return this._cards().filter(card => card.status === status);
     }
     );
   }
