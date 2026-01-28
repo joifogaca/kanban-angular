@@ -6,17 +6,26 @@
 </div>
 <div class="colunas-kanban">
   <app-coluna-kanban nomeColuna="backlog"
+  (addCartaoEmit)="abreModalNovoCartao($event)"
   afterColor="#d573b6"
   [cards]="backlogCards()"></app-coluna-kanban>
   <app-coluna-kanban nomeColuna="doing"
+  (addCartaoEmit)="abreModalNovoCartao($event)"
    afterColor="#fea065"
   [cards]="doingCards()"></app-coluna-kanban>
   <app-coluna-kanban nomeColuna="review"
+  (addCartaoEmit)="abreModalNovoCartao($event)"
   afterColor="#8ff600"
   [cards]="reviewCards()"></app-coluna-kanban>
   <app-coluna-kanban nomeColuna="done"
+  (addCartaoEmit)="abreModalNovoCartao($event)"
   afterColor="#004173"
   [cards]="doneCards()"></app-coluna-kanban>
 </div>
   </div>
 </main>
+<dialog #dialog id="dialog">
+  <app-add-cartao
+  (fecharEmit)="fechar()"
+  ></app-add-cartao>
+</dialog>

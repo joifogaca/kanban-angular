@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, output } from '@angular/core';
 
 import { TitleCasePipe } from '@angular/common';
 import { CartaoKanbanComponent } from "../cartao-kanban/cartao-kanban.component";
@@ -17,6 +17,9 @@ import { CardService } from '../shared/card.service';
 })
 export class ColunaKanbanComponent {
 
+  addCartaoEmit = output<CardStatus>();
+
+
   @Input({ required: true }) afterColor: string = '#d573b6';
   @Input({ required: true }) nomeColuna!: CardStatus;
   @Input({ required: true }) cards!: Card[];
@@ -24,6 +27,11 @@ export class ColunaKanbanComponent {
   constructor(private readonly cardService: CardService){}
 
   card_over: boolean = false;
+  addCartao() {
+    console.log(this.nomeColuna);
+    this.addCartaoEmit.emit(this.nomeColuna);
+  }
+
   onDragover(event: DragEvent){
     event.preventDefault();
     this.card_over = true;

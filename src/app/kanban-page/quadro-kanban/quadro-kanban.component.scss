@@ -25,20 +25,17 @@
 }
 
 
-//layout usando flex-box
-// .container {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 10px;
-//   justify-content: center;
-//   align-items: center;
-// }
+#dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  gap: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: aliceblue;
+  min-width: 300px;
+}
 
-
-// .colunas-kanban {
-//   display: flex;
-//   gap: 10px;
-// }
-//layout usando flex-box fim
-
-
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}

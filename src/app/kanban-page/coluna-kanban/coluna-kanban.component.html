@@ -4,7 +4,7 @@
    (drop)="onDrop($event)">
   <div class="coluna-header">
     <h2>{{ nomeColuna | titlecase }}</h2>
-    <button class="add-cartao">
+    <button class="add-cartao" (click)="addCartao()">
       <i class="fa-solid fa-plus"></i>
   </button>
   </div>
