@@ -6,8 +6,22 @@
       </i></button>
   </div>
   <div class="body">
+    <form [formGroup]="tarefaForm">
+    <div class="input-group">
+      <label for="nomeTarefa">Descrição tarefa:</label>
+      <input type="text" id="nomeTarefa" formControlName="nomeTarefa" placeholder="Tarefa" >
+    </div>
+    <div class="input-group">
+      <label for="responsavel">Responsavél</label>
+      <select id="responsavel" formControlName="responsavel">
+        <option *ngFor="let responsavel of responsaveis" [value]="responsavel.id">
+          {{ responsavel.nome }}
+        </option>
+      </select>
+    </div>
     <div class="input-group">
       
     </div>
+    </form>
   </div>
 </div>
