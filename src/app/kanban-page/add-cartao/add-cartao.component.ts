@@ -29,4 +29,8 @@ export class AddCartaoComponent {
     this.fecharEmit.emit();
   }
 
+  confirmar() {
+    console.log(this.tarefaForm.value);
+  }
+
 }

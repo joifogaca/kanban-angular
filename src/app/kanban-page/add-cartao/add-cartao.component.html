@@ -1,27 +1,31 @@
 <div class="container">
   <div class="header">
     <h3>Nova Tarefa</h3>
-    <button class="btn-fechar" (click)="fechar()">
-      <i class="fa-solid fa-xmark">
-      </i></button>
+
   </div>
-  <div class="body">
-    <form [formGroup]="tarefaForm">
-    <div class="input-group">
-      <label for="nomeTarefa">Descrição tarefa:</label>
-      <input type="text" id="nomeTarefa" formControlName="nomeTarefa" placeholder="Tarefa" >
+
+  <form [formGroup]="tarefaForm">
+    <div class="body">
+      <div class="input-group">
+        <label for="nomeTarefa">Descrição tarefa</label>
+        <input type="text" id="nomeTarefa" formControlName="nomeTarefa" placeholder="Tarefa">
+      </div>
+      <div class="input-group">
+        <label for="responsavel">Responsavél</label>
+        <select id="responsavel" formControlName="responsavel">
+          <option *ngFor="let responsavel of responsaveis" [value]="responsavel.id">
+            {{ responsavel.nome }}
+          </option>
+        </select>
+      </div>
+      <div class="btns-acoes">
+        <button class="btn-fechar" (click)="fechar()">
+          <i class="fa-solid fa-circle-xmark"></i></button>
+        <button class="btn-confirmar" (click)="confirmar()" [disabled]="!tarefaForm.valid">
+          <i class="fa-solid fa-circle-check"></i>
+        </button>
+
+      </div>
     </div>
-    <div class="input-group">
-      <label for="responsavel">Responsavél</label>
-      <select id="responsavel" formControlName="responsavel">
-        <option *ngFor="let responsavel of responsaveis" [value]="responsavel.id">
-          {{ responsavel.nome }}
-        </option>
-      </select>
-    </div>
-    <div class="input-group">
-      
-    </div>
-    </form>
-  </div>
+  </form>
 </div>
